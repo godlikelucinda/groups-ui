@@ -14,7 +14,13 @@ export class GroupsOverviewComponent implements OnInit {
   constructor(private groupService: GroupServiceService) { }
 
   ngOnInit() {
-    this.groups = this.groupService.getAllGroups();
+    this.groupService.getAllGroups().subscribe(
+      response => this.handleSuccessfulResponse(response)
+    );
+  }
+
+  handleSuccessfulResponse(response) {
+    this.groups = response;
   }
 
 }
