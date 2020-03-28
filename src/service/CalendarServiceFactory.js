@@ -1,5 +1,5 @@
-import CalendarService from './CalendarService'
-import CalendarServiceMock from './CalendarServiceMock'
+import { CalendarService } from './CalendarService'
+import { CalendarServiceMock } from './CalendarServiceMock'
 
 export class CalendarServiceFactory {
   create () {
