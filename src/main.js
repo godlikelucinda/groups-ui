@@ -10,7 +10,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
-process.env.NODE_ENV = 'test'
 
 new Vue({
   router,

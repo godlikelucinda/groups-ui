@@ -11,11 +11,11 @@ describe('CalendarServiceMock.js', () => {
     const bradDoctorAppointment = events[1]
     const bradSoccerTraining = events[2]
 
-    expect(events[0].eventId).toBe('001')
-    expect(events[0].title).toBe('Geburtstag Brad')
-    expect(events[1].eventId).toBe('002')
-    expect(events[1].title).toBe('Brad Hautarzt')
-    expect(events[2].eventId).toBe('003')
-    expect(events[2].title).toBe('Brad Fußballverein')
+    expect(bradBirthday.eventId).toBe('001')
+    expect(bradBirthday.title).toBe('Geburtstag Brad')
+    expect(bradDoctorAppointment.eventId).toBe('002')
+    expect(bradDoctorAppointment.title).toBe('Brad Hautarzt')
+    expect(bradSoccerTraining.eventId).toBe('003')
+    expect(bradSoccerTraining.title).toBe('Brad Fußballverein')
   })
 })

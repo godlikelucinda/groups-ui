@@ -1,6 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
 import CalendarEvent from '@/components/CalendarEvent.vue'
-import { CalendarServiceFactory } from '@/service/CalendarServiceFactory'
 
 describe('CalendarEvent.vue', () => {
   const event = {

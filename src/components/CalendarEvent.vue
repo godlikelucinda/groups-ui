@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-event">
-    <h1>{{ event.title }}</h1>
+    <p><b>{{ event.title }}</b></p>
     <p>{{ event.startDateTime }} - {{ event.endDateTime }}</p>
     <p>{{ event.description }}</p>
   </div>

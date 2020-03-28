@@ -5,20 +5,34 @@
       <b-calendar :date-info-fn="getDateClass"></b-calendar>
     </b-col>
     <b-col>
-      <p>Value: <b>'{{ value }}'</b></p>
-      <p class="mb-0">Context:</p>
-      <pre class="small">{{ context }}</pre>
+      <CalendarEvent
+        v-for="appointment in callendarAppointments"
+        v-bind:key="appointment.eventId"
+        :event="appointment"></CalendarEvent>
     </b-col>
   </b-row>
 </template>
 
 <script>
+import CalendarEvent from '@/components/CalendarEvent.vue'
+import { CalendarServiceFactory } from '@/service/CalendarServiceFactory'
+
 export default {
+  name: 'Calendar',
+  components: {
+    CalendarEvent
+  },
   data () {
     return {
       value: '',
-      context: null,
-      callendarAppointments: ['2020-03-01', '2020-03-02', '2020-03-03', '2020-03-04']
+      context: null
+    }
+  },
+  computed: {
+    callendarAppointments: function () {
+      const serviceFactory = new CalendarServiceFactory()
+      const calendarService = serviceFactory.Create()
+      return calendarService.getEvents()
     }
   },
   methods: {
