@@ -1,5 +1,6 @@
 <template>
   <div class="calendar-event">
+    <hr>
     <p><b>{{ event.title }}</b></p>
     <p>{{ event.startDateTime }} - {{ event.endDateTime }}</p>
     <p>{{ event.description }}</p>
