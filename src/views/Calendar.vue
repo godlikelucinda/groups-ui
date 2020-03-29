@@ -31,7 +31,7 @@ export default {
   computed: {
     callendarAppointments: function () {
       const serviceFactory = new CalendarServiceFactory()
-      const calendarService = serviceFactory.Create()
+      const calendarService = serviceFactory.create()
       return calendarService.getEvents()
     }
   },
