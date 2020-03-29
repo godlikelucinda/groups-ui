@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-event">
+  <div class="note">
     <hr>
     <p><b>{{ event.title }}</b></p>
     <p>{{ event.startDateTime }} - {{ event.endDateTime }}</p>
@@ -9,9 +9,9 @@
 
 <script>
 export default {
-  name: 'CalendarEvent',
+  name: 'Note',
   props: {
-    event: {
+    noteObject: {
       type: Object,
       required: true
     }

@@ -1,10 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import CalendarEvent from '@/components/CalendarEvent.vue'
+import Note from '@/components/Note.vue'
 
-describe('CalendarEvent.vue', () => {
-  const event = {
-    eventId: '001',
-    calenderId: 'family-calendar',
+describe('Note.vue', () => {
+  const noteObject = {
+    noteId: '001',
     title: 'Geburtstag Brad',
     description: 'Geburtstagsfeier im Indoorspielplatz',
     startDateTime: new Date('2020-01-01T15:00:00Z'),
@@ -20,30 +19,30 @@ describe('CalendarEvent.vue', () => {
   }
 
   it('renders event.title', () => {
-    const wrapper = shallowMount(CalendarEvent, {
-      propsData: { event }
+    const wrapper = shallowMount(Note, {
+      propsData: { noteObject }
     })
-    expect(wrapper.text()).toMatch(event.title)
+    expect(wrapper.text()).toMatch(noteObject.title)
   })
 
   it('renders event.startDateTime', () => {
-    const wrapper = shallowMount(CalendarEvent, {
-      propsData: { event }
+    const wrapper = shallowMount(Note, {
+      propsData: { noteObject }
     })
-    expect(wrapper.text()).toMatch(event.startDateTime.toString())
+    expect(wrapper.text()).toMatch(noteObject.startDateTime.toString())
   })
 
   it('renders event.endDateTime', () => {
-    const wrapper = shallowMount(CalendarEvent, {
-      propsData: { event }
+    const wrapper = shallowMount(Note, {
+      propsData: { noteObject }
     })
-    expect(wrapper.text()).toMatch(event.endDateTime.toString())
+    expect(wrapper.text()).toMatch(noteObject.endDateTime.toString())
   })
 
   it('renders event.description', () => {
-    const wrapper = shallowMount(CalendarEvent, {
-      propsData: { event }
+    const wrapper = shallowMount(Note, {
+      propsData: { noteObject }
     })
-    expect(wrapper.text()).toMatch(event.description)
+    expect(wrapper.text()).toMatch(noteObject.description)
   })
 })
