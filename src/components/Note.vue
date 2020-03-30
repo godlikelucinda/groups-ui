@@ -1,9 +1,9 @@
 <template>
   <div class="note">
     <hr>
-    <p><b>{{ event.title }}</b></p>
-    <p>{{ event.startDateTime }} - {{ event.endDateTime }}</p>
-    <p>{{ event.description }}</p>
+    <p><b>{{ noteObject.title }}</b></p>
+    <p>{{ noteObject.startDateTime }} - {{ noteObject.endDateTime }}</p>
+    <p>{{ noteObject.description }}</p>
   </div>
 </template>
 

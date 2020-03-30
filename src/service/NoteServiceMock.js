@@ -1,10 +1,10 @@
-import { CalendarService } from './CalendarService'
+import { NoteService } from './NoteService'
 
-export class CalendarServiceMock extends CalendarService {
-  getEvents (startDate, endDate) {
+export class NoteServiceMock extends NoteService {
+  getNotes (startDate, endDate) {
     return [
       {
-        eventId: '001',
+        noteId: '001',
         calenderId: 'family-calendar',
         title: 'Geburtstag Brad',
         description: 'Geburtstagsfeier im Indoorspielplatz',
@@ -20,7 +20,7 @@ export class CalendarServiceMock extends CalendarService {
         note: ''
       },
       {
-        eventId: '002',
+        noteId: '002',
         calenderId: 'family-calendar',
         title: 'Brad Hautarzt',
         description: '',
@@ -36,7 +36,7 @@ export class CalendarServiceMock extends CalendarService {
         note: ''
       },
       {
-        eventId: '003',
+        noteId: '003',
         calenderId: 'family-calendar',
         title: 'Brad Fußballverein',
         description: '',

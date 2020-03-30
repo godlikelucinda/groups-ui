@@ -4,10 +4,10 @@
       <b-calendar v-model="value" @context="onContext" :date-info-fn="getDateClass"></b-calendar>
     </b-col>
     <b-col>
-      <CalendarEvent
-        v-for="appointment in callendarAppointments"
-        v-bind:key="appointment.eventId"
-        :event="appointment"></CalendarEvent>
+      <Note
+        v-for="note in callendarNotes"
+        v-bind:key="note.noteId"
+        :noteObject="note"></Note>
 
       <p>Value: <b>'{{ value }}'</b></p>
       <p class="mb-0">Context:</p>
@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import CalendarEvent from '@/components/CalendarEvent.vue'
+import Note from '@/components/Note.vue'
 
 export default {
   name: 'CalendarOverview',
   components: {
-    CalendarEvent
+    Note
   },
   props: {
-    calendarService: {
+    noteService: {
       type: Object,
       required: true
     }
@@ -37,8 +37,8 @@ export default {
     }
   },
   computed: {
-    callendarAppointments: function () {
-      return this.calendarService.getEvents()
+    callendarNotes: function () {
+      return this.noteService.getNotes()
     }
   },
   methods: {
@@ -46,7 +46,7 @@ export default {
       this.context = ctx
     },
     getDateClass (ymd, date) {
-      if (this.callendarAppointments.includes(ymd)) {
+      if (this.callendarNotes.includes(ymd)) {
         return 'table-info'
       }
     }

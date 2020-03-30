@@ -1,18 +1,18 @@
 import { shallowMount } from '@vue/test-utils'
-import { CalendarServiceFactory } from '@/service/CalendarServiceFactory'
 import CalendarOverview from '@/components/CalendarOverview.vue'
-import CalendarEvent from '@/components/CalendarEvent'
+import { NoteServiceFactory } from '@/service/NoteServiceFactory'
+import Note from '@/components/Note'
 
 describe('CalendarOverview.vue', () => {
   process.env.NODE_ENV = 'test'
-  const calendarService = new CalendarServiceFactory().create()
+  const noteService = new NoteServiceFactory().create()
 
   it('renders circle to select current day', async () => {
     const wrapper = shallowMount(CalendarOverview, {
-      propsData: { calendarService }
+      propsData: { noteService }
     })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains(CalendarEvent)).toBe(true)
-    expect(wrapper.html().tocontains('.b-calendar')).toBe(true)
+    expect(wrapper.contains(Note)).toBe(true)
+    // expect(wrapper.html().tocontains('.b-calendar')).toBe(true)
   })
 })

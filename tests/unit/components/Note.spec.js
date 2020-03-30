@@ -18,28 +18,28 @@ describe('Note.vue', () => {
     note: ''
   }
 
-  it('renders event.title', () => {
+  it('renders noteObject.title', () => {
     const wrapper = shallowMount(Note, {
       propsData: { noteObject }
     })
     expect(wrapper.text()).toMatch(noteObject.title)
   })
 
-  it('renders event.startDateTime', () => {
+  it('renders noteObject.startDateTime', () => {
     const wrapper = shallowMount(Note, {
       propsData: { noteObject }
     })
     expect(wrapper.text()).toMatch(noteObject.startDateTime.toString())
   })
 
-  it('renders event.endDateTime', () => {
+  it('renders noteObject.endDateTime', () => {
     const wrapper = shallowMount(Note, {
       propsData: { noteObject }
     })
     expect(wrapper.text()).toMatch(noteObject.endDateTime.toString())
   })
 
-  it('renders event.description', () => {
+  it('renders noteObject.description', () => {
     const wrapper = shallowMount(Note, {
       propsData: { noteObject }
     })

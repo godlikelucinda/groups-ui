@@ -1,10 +1,10 @@
 <template>
-  <CalendarOverview :calendarService="calendarService"></CalendarOverview>
+  <CalendarOverview :noteService="noteService"></CalendarOverview>
 </template>
 
 <script>
 import CalendarOverview from '@/components/CalendarOverview.vue'
-import { CalendarServiceFactory } from '@/service/CalendarServiceFactory'
+import { NoteServiceFactory } from '@/service/NoteServiceFactory'
 
 export default {
   name: 'Calendar',
@@ -18,8 +18,8 @@ export default {
     }
   },
   computed: {
-    calendarService: function () {
-      const serviceFactory = new CalendarServiceFactory()
+    noteService: function () {
+      const serviceFactory = new NoteServiceFactory()
       return serviceFactory.create()
     }
   }
