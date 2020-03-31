@@ -40,7 +40,7 @@ export class NoteServiceMock extends NoteService {
         calenderId: 'family-calendar',
         title: 'Brad Fußballverein',
         description: '',
-        startDateTime: new Date('2020-01-03T16:20:00Z'),
+        startDateTime: new Date('2020-01-01T16:20:00Z'),
         endDateTime: new Date('2020-01-01T16:30:00Z'),
         location: 'Dorfstraße 55, 12345 Hauptstadt',
         repeat: 'weekly',

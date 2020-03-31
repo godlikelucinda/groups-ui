@@ -45,14 +45,31 @@ export default {
     onContext (ctx) {
       this.context = ctx
     },
-    getDateClass (ymd, date) {
-      if (this.callendarNotes.includes(ymd)) {
-        return 'table-info'
-      }
-    }
-    // getActiveMonth () {
+    // getNotesInSameMonth(date) {
+    //   const notesInSameMonth = []
 
-    // }
+    //   this.callendarNotes.forEach(element => {})
+    // },
+    getDateClass (ymd, date) {
+      let classString = ''
+
+      this.callendarNotes.forEach(element => {
+        const startDate = this.convertDateTimeToDate(element.startDateTime)
+        const endDate = this.convertDateTimeToDate(element.endDateTime)
+
+        if (date >= startDate && date <= endDate) {
+          classString = 'table-info'
+        }
+      })
+
+      return classString
+    },
+    convertDateTimeToDate (dateTime) {
+      const year = dateTime.getFullYear()
+      const month = dateTime.getMonth()
+      const day = dateTime.getDate()
+      return new Date(year, month, day)
+    }
   }
 }
 </script>
