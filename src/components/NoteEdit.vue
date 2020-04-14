@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div v-b-modal="noteObject.noteId" class="note">
-      <hr>
-      <p><b>{{ noteObject.title }}</b></p>
+  <div class="note-edit">
+    <b-form>
       <p>{{ noteObject.startDateTime }} - {{ noteObject.endDateTime }}</p>
       <p>{{ noteObject.description }}</p>
       <div class="mb-4">
@@ -11,22 +9,13 @@
         <b-avatar variant="info" src="https://placekitten.com/300/300"></b-avatar>
         <b-avatar variant="success" icon="people-fill"></b-avatar>
       </div>
-    </div>
-
-    <b-modal :id="noteObject.noteId" :title="noteObject.title">
-      <NoteEdit :noteObject="noteObject"></NoteEdit>
-    </b-modal>
+    </b-form>
   </div>
 </template>
 
 <script>
-import NoteEdit from '@/components/NoteEdit.vue'
-
 export default {
-  name: 'Note',
-  components: {
-    NoteEdit
-  },
+  name: 'NoteEdit',
   props: {
     noteObject: {
       type: Object,
@@ -37,7 +26,7 @@ export default {
 </script>
 
 <style>
-.note {
+.note-edit {
   text-align: left;
 }
 </style>
