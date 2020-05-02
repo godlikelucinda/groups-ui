@@ -21,11 +21,14 @@
 
 <script>
 import NoteEdit from '@/components/NoteEdit.vue'
+// import { BAvatar, BModal } from 'bootstrap-vue'
 
 export default {
   name: 'Note',
   components: {
     NoteEdit
+    // BAvatar,
+    // BModal
   },
   props: {
     noteObject: {

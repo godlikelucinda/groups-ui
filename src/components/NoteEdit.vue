@@ -1,8 +1,14 @@
 <template>
   <div class="note-edit">
     <b-form>
-      <p>{{ noteObject.startDateTime }} - {{ noteObject.endDateTime }}</p>
-      <p>{{ noteObject.description }}</p>
+      <b-form-group>
+        <p>{{ noteObject.startDateTime }} - {{ noteObject.endDateTime }}</p>
+      </b-form-group>
+
+      <b-form-group>
+        <p>{{ noteObject.description }}</p>
+      </b-form-group>
+
       <div class="mb-4">
         <b-avatar></b-avatar>
         <b-avatar variant="primary" text="BV"></b-avatar>

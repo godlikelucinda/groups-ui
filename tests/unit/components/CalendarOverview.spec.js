@@ -1,7 +1,13 @@
+import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import CalendarOverview from '@/components/CalendarOverview.vue'
 import { NoteServiceFactory } from '@/service/NoteServiceFactory'
+import { BootstrapVue, BRow, BCol } from 'bootstrap-vue'
 import Note from '@/components/Note'
+
+Vue.use(BootstrapVue)
+Vue.component('b-row', BRow)
+Vue.component('b-col', BCol)
 
 describe('CalendarOverview.vue', () => {
   process.env.NODE_ENV = 'test'
@@ -12,7 +18,8 @@ describe('CalendarOverview.vue', () => {
       propsData: { noteService }
     })
     await wrapper.vm.$nextTick()
-    expect(wrapper.contains(Note)).toBe(true)
+    // expect(wrapper.contains(Note)).toBe(true)
+    expect(wrapper.html()).toContain('circle').toBe(true)
     // expect(wrapper.html().tocontains('.b-calendar')).toBe(true)
   })
 })
