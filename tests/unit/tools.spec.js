@@ -1,4 +1,4 @@
-import {formatDateTime} from '@/tools.js'
+import { formatDateTime } from '@/tools.js'
 
 describe('tools.js', () => {
   it('should return an empty string', () => {

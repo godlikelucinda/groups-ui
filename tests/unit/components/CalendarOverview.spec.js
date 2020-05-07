@@ -3,7 +3,6 @@ import { shallowMount } from '@vue/test-utils'
 import CalendarOverview from '@/components/CalendarOverview.vue'
 import { NoteServiceFactory } from '@/service/NoteServiceFactory'
 import { BootstrapVue, BRow, BCol } from 'bootstrap-vue'
-import Note from '@/components/Note'
 
 Vue.use(BootstrapVue)
 Vue.component('b-row', BRow)
@@ -17,7 +16,7 @@ describe('CalendarOverview.vue', () => {
     const wrapper = shallowMount(CalendarOverview, {
       propsData: { noteService }
     })
-    
+
     const getFirstOfMarch = jest.fn(() => { return new Date(2020, 3, 1) })
     wrapper.setMethods({ getActiveDate: getFirstOfMarch })
     expect(wrapper.vm.getActiveDate().toString()).toBe(new Date(2020, 3, 1).toString())

@@ -93,7 +93,7 @@ export default {
       if (this.context == null) {
         return null
       }
-      
+
       return this.context.activeDate
     }
   }
