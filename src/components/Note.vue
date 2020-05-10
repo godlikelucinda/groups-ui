@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <b-modal :id="noteObject.noteId" title="Ereignis bearbeiten">
+    <b-modal :id="noteObject.noteId" :title="noteObject.title">
       <NoteEdit :noteObject="noteObject"></NoteEdit>
     </b-modal>
   </div>
