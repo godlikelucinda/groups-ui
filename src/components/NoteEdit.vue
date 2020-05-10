@@ -6,11 +6,13 @@
       </b-form-group>
 
       <b-form-group id="input-group-start-date-time" label="Von">
-        <b-form-input id="input-start-date-time" v-model="noteObject.startDateTime" required type="date"></b-form-input>
+        <b-form-datepicker id="datepicker-start-date-time" v-model="noteObject.startDateTime"></b-form-datepicker>
+        <b-form-timepicker id="timepicker-start-time" v-model="noteObject.startDateTime" minutes-step="5"></b-form-timepicker>
       </b-form-group>
 
       <b-form-group id="input-group-end-date-time" label="Bis">
-        <b-form-input id="input-end-date-time" v-model="noteObject.endDateTime" type="date"></b-form-input>
+        <b-form-datepicker id="datepicker-end-date-time" v-model="noteObject.endDateTime"></b-form-datepicker>
+        <b-form-timepicker id="timepicker-end-time" v-model="noteObject.endDateTime" minutes-step="5"></b-form-timepicker>
       </b-form-group>
 
       <b-form-group id="input-group-description" label="Beschreibung">
