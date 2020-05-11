@@ -3,7 +3,8 @@
     <div v-b-modal="noteObject.noteId" class="note">
       <hr>
       <p><b>{{ noteObject.title }}</b></p>
-      <p>{{ noteObject.startDateTime }} - {{ noteObject.endDateTime }}</p>
+      <p>
+        {{ formattedStart }} - {{ formattedEnd }}</p>
       <p>{{ noteObject.description }}</p>
       <div class="mb-4">
         <b-avatar></b-avatar>
@@ -34,6 +35,30 @@ export default {
     noteObject: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    formattedStart () {
+      return this.formatDate(this.noteObject.startDateTime)
+    },
+    formattedEnd () {
+      return this.formatDate(this.noteObject.endDateTime)
+    }
+  },
+  methods: {
+    formatDate (date) {
+      if (!date) {
+        return ''
+      }
+
+      const day = date.getDate() !== undefined ? date.getDate() : ''
+      const month = date.getMonth() !== undefined ? date.getMonth() + 1 : ''
+      const year = date.getFullYear() !== undefined ? date.getFullYear() : ''
+
+      const hour = date.getHours() !== undefined ? date.getHours() : ''
+      const minutes = date.getMinutes() !== undefined ? date.getMinutes().toString().padStart(2, '0') : ''
+
+      return `${day}.${month}.${year} ${hour}:${minutes}`
     }
   }
 }

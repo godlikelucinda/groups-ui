@@ -7,12 +7,12 @@
 
       <b-form-group id="input-group-start-date-time" label="Von">
         <b-form-datepicker id="datepicker-start-date-time" v-model="noteObject.startDateTime"></b-form-datepicker>
-        <b-form-timepicker id="timepicker-start-time" v-model="noteObject.startDateTime" minutes-step="5"></b-form-timepicker>
+        <b-form-timepicker id="timepicker-start-time" v-model="startTime" minutes-step="5"></b-form-timepicker>
       </b-form-group>
 
       <b-form-group id="input-group-end-date-time" label="Bis">
         <b-form-datepicker id="datepicker-end-date-time" v-model="noteObject.endDateTime"></b-form-datepicker>
-        <b-form-timepicker id="timepicker-end-time" v-model="noteObject.endDateTime" minutes-step="5"></b-form-timepicker>
+        <b-form-timepicker id="timepicker-end-time" v-model="endTime" minutes-step="5"></b-form-timepicker>
       </b-form-group>
 
       <b-form-group id="input-group-description" label="Beschreibung">
@@ -36,6 +36,27 @@ export default {
     noteObject: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    startTime () {
+      return this.formatTime(this.noteObject.startDateTime)
+    },
+    endTime () {
+      return this.formatTime(this.noteObject.endDateTime)
+    }
+  },
+  methods: {
+    formatTime (dateTime) {
+      if (!dateTime) {
+        return ''
+      }
+
+      const hours = dateTime.getHours().toString().padStart(2, '0')
+      const minutes = dateTime.getMinutes().toString().padStart(2, '0')
+      const seconds = dateTime.getSeconds().toString().padStart(2, '0')
+
+      return `${hours}:${minutes}:${seconds}`
     }
   }
 }
