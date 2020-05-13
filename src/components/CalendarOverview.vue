@@ -44,11 +44,12 @@ export default {
       return this.noteService.getNotes()
     },
     callendarNotesInSameMonth () {
-      if (this.context == null) {
+      const activeDate = this.getActiveDate()
+
+      if (activeDate == null) {
         return []
       }
 
-      const activeDate = this.context.activeDate
       return this.getNotesInSameMonth(activeDate)
     }
   },
@@ -87,6 +88,13 @@ export default {
       const month = dateTime.getMonth()
       const day = dateTime.getDate()
       return new Date(year, month, day)
+    },
+    getActiveDate () {
+      if (this.context == null) {
+        return null
+      }
+
+      return this.context.activeDate
     }
   }
 }

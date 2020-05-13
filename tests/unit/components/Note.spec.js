@@ -1,5 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import Vue from 'vue'
 import Note from '@/components/Note.vue'
+import { BootstrapVue, BAvatar, BModal } from 'bootstrap-vue'
+import { shallowMount } from '@vue/test-utils'
+
+Vue.use(BootstrapVue)
+Vue.component('b-avatar', BAvatar)
+Vue.component('b-modal', BModal)
 
 describe('Note.vue', () => {
   const noteObject = {
